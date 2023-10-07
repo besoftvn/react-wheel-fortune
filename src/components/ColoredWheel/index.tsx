@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles.css';
+import styles from './styles.module.css'
 
 interface WheelProps {
     items: any[];
@@ -17,10 +17,10 @@ interface WheelProps {
 }
 
 interface WheelState {
-    selectedItem: number | null;
+    selectedItem: number | null | any;
 }
 
-export default class ColoredWheel extends React.Component<WheelProps, WheelState> {
+export default class ColoredTextWheel extends React.Component<WheelProps, WheelState> {
     constructor(props: WheelProps) {
         super(props);
         this.state = {
@@ -32,8 +32,11 @@ export default class ColoredWheel extends React.Component<WheelProps, WheelState
     selectItem() {
         if (this.state.selectedItem === null) {
             const selectedItem = Math.floor(Math.random() * this.props.items.length);
-
-            this.setState({ selectedItem });
+            if (this.props.result) {
+                this.setState({ selectedItem: this.props.result });
+            } else {
+                this.setState({ selectedItem });
+            }
         } else {
             this.setState({ selectedItem: null });
             setTimeout(this.selectItem, 500);
@@ -61,22 +64,21 @@ export default class ColoredWheel extends React.Component<WheelProps, WheelState
             '--spinning-duration': `${this.props.duration || 5}s`,
             '--reset-duration': `${this.props.timeReset || 0.25}s`,
         };
+
         const wheelItem: any = (index: any) => {
             return {
                 '--item-nb': index,
             }
         };
-
-
-
-        const spinning: any = selectedItem !== null ? "spinning" : '';
+        const spinning: any = selectedItem !== null ? styles.spinning : '';
 
         return (
             <div>
-                <div className="wheelContainer "style={wheelContainer}>
-                    <div className={`wheel ${spinning}`} style={wheelVars} onClick={this.selectItem}>
+
+                <div className={styles.wheelContainer} style={wheelContainer}>
+                    <div className={`${styles.wheel} ${spinning}`} style={wheelVars} onClick={this.selectItem}>
                         {items.map((item, index) => (
-                            <div className="wheelItem" key={index} style={wheelItem(index)}>
+                            <div className={`${styles.wheelItem}`} key={index} style={wheelItem(index)}>
                                 {item}
                             </div>
                         ))}
