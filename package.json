@@ -1,6 +1,6 @@
 {
   "name": "react-wheel-fortune",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Made with create-react-library",
   "author": "besoftvn",
   "license": "MIT",
@@ -8,7 +8,15 @@
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.tsx",
-  "keywords": ["wheel","react","reactjs","nextjs","typescript", "fortune","besoft"],
+  "keywords": [
+    "wheel",
+    "react",
+    "reactjs",
+    "nextjs",
+    "typescript",
+    "fortune",
+    "besoft"
+  ],
   "engines": {
     "node": ">=10"
   },
