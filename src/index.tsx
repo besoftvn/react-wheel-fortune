@@ -1,5 +1,5 @@
 import * as React from 'react'
-import styles from './styles.module.css'
+import  './styles.module.css'
 import ColoredWheel from './components/ColoredWheel';
 
 interface Props {
@@ -20,7 +20,7 @@ interface BasicWheelProps {
   textColor?: string,
 }
 export const ExampleComponent = ({ text }: Props) => {
-  return <div className={styles.test}>Example Component hello 123342341: {text}</div>
+  return <div className='test'>Example Component hello 123342341: {text}</div>
 }
 
 

@@ -61,21 +61,22 @@ export default class ColoredWheel extends React.Component<WheelProps, WheelState
             '--spinning-duration': `${this.props.duration || 5}s`,
             '--reset-duration': `${this.props.timeReset || 0.25}s`,
         };
-        console.log(selectedItem)
         const wheelItem: any = (index: any) => {
             return {
                 '--item-nb': index,
             }
         };
-        const spinning: any = selectedItem !== null ? 'spinning' : '';
+
+
+
+        const spinning: any = selectedItem !== null ? "spinning" : '';
 
         return (
             <div>
-
-                <div className="wheel-container" style={wheelContainer}>
+                <div className="wheelContainer "style={wheelContainer}>
                     <div className={`wheel ${spinning}`} style={wheelVars} onClick={this.selectItem}>
                         {items.map((item, index) => (
-                            <div className="wheel-item" key={index} style={wheelItem(index)}>
+                            <div className="wheelItem" key={index} style={wheelItem(index)}>
                                 {item}
                             </div>
                         ))}
