@@ -64,6 +64,12 @@ export default App
 
 ![before spinning](./demo.png)
 
+
+
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://paypal.me/bettv99?country.x=VN&locale.x=vi_VN)
+
 ## License
 
 MIT © [besoftvn](https://github.com/besoftvn)
+
+
