@@ -8,8 +8,14 @@
 
 ```bash
 npm install --save react-wheel-fortune
+```
 
+```bash
 npm install --save react-wheel-fortune --legacy-peer-deps
+```
+
+```bash
+yarn add react-wheel-fortune
 ```
 
 
@@ -26,6 +32,10 @@ npm install --save react-wheel-fortune --legacy-peer-deps
 | timeReset      |      0.25     |      Yes |
 | borderSize     |       5       |      Yes |
 | result         |     RANDOM    |      Yes |
+| disable        |     false     |      Yes |
+| onFinished     |      N/A      |      Yes |
+| onStart        |      N/A      |      Yes |
+
 
 ## Usage
 
@@ -47,7 +57,6 @@ const App = () => {
     "HELLO"]
   let wheelColor: string = "#000"
   return <BasicWheel
-
     items={items}
     color={wheelColor}
     result={3} // index of value in array (if not set it random result)
